@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -10,8 +11,6 @@
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css" />
 	<h:outputStylesheet library="css" name="app.css" />
-	<!-- <h:outputStylesheet library="css" name="materialize.min.css"/> -->
-	<!-- <link rel="stylesheet" href="resources/css/materialize.min.css" /> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>TransLog - solução em logistica</title>
 	<!-- logo -->
@@ -22,12 +21,10 @@
 			<div class="nav-wrapper" style="background-color: #c39b37;">
 				<div class="container">
 					<a href="index.xhtml" class="brand-logo"> <img alt="logo"
-						src="resources/img/logo.png" />
+						src="resources/img/logo.png" title="TransLog" />
 					</a> <a href="#" data-activates="mobile-demo" class="button-collapse"><i
 						class="material-icons white-text">menu</i></a>
-					<!-- Translog - Soluções em logistíca -->
 					<ul class="right hide-on-med-and-down">
-						<!-- @TODO if para usuario -->
 						<li><a href="app/login.xhtml" class="right">Acesse</a></li>
 						<li><a href="app/cadastro.xhtml" class="right">Cadastre-se</a></li>
 					</ul>

@@ -1,11 +1,143 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<h:head></h:head> 
-<body> 
+<body>
+	<ui:composition template="../resources/template/cabecalho.xhtml">
+		<ui:define name="conteudo">
 
-</body> 
+			<div class="container center">
+				<div class="row">
+					<h4>
+						<h:outputText
+							value="Crie sua conta e tenha acesso a inúmeras vantagens" />
+					</h4>
+				</div>
+				<div class="row">
+					<div class="col s4">
+						<h6>
+							<h:outputText value="Dados Pessoais" />
+						</h6>
+					</div>
+					<div class="col s2"></div>
+					<div class="col s6">
+						<h6>
+							<h:outputText value="Endereço" />
+						</h6>
+					</div>
+				</div>
+
+				<h:form id="form_cadastro">
+					<div class="row">
+						<div class="input-field col s6">
+							<h:inputText alt="Nome" title="Seu nome" id="nome"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="Nome" for="nome" styleClass="active" />
+						</div>
+
+						<div class="input-field col s6">
+							<h:inputText alt="Logradouro" title="Seu logradouro"
+								id="logradouro" styleClass="validate" required="true" />
+							<h:outputLabel value="Logradouro" for="logradouro"
+								styleClass="active" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<h:inputText alt="CPF/CNPJ" title="Seu cpf/cnpj" id="cpf_cnpj"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="CPF/CNPJ" for="cpf_cnpj"
+								styleClass="active" />
+						</div>
+
+						<div class="input-field col s6">
+							<h:inputText alt="Cep" title="Seu CEP" id="cep"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="CEP" for="cep" styleClass="active" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<h:inputText alt="login" title="Seu login" id="login"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="Login" for="login" styleClass="active" />
+						</div>
+
+						<div class="input-field col s6">
+							<h:inputText alt="Bairro" title="Seu Bairro" id="bairro"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="Bairro" for="bairro" styleClass="active" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<h:inputSecret alt="Senha" title="Sua senha" id="senha"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="Senha" for="senha" styleClass="active" />
+						</div>
+
+						<div class="input-field col s6">
+							<h:inputText alt="Número" title="Seu número" id="numero"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="Número" for="numero" styleClass="active" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<h:inputSecret alt="Confirma senha" title="Confirme sua senha"
+								id="csenha" styleClass="validate" required="true" />
+							<h:outputLabel value="Confirme sua senha" for="csenha"
+								styleClass="active" />
+						</div>
+
+						<div class="input-field col s6">
+							<h:inputText alt="estado" title="Seu estado" id="estado"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="Estado" for="estado" styleClass="active" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<p:selectOneMenu id="categoria" effect="fold">
+								<f:selectItem itemLabel="-- Selecione uma opção" itemValue="0" />
+								<f:selectItem itemLabel="-- Selecione uma opção1" itemValue="1" />
+							</p:selectOneMenu>
+							<h:outputLabel value="Tipo de usuário" for="categoria"
+								styleClass="active" />
+						</div>
+
+						<div class="input-field col s6">
+							<h:inputText alt="cidade" title="Sua cidade" id="cidade"
+								styleClass="validate" required="true" />
+							<h:outputLabel value="Cidade" for="cidade" styleClass="active" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6"></div>
+						<div class="input-field col s6">
+							<h:inputText alt="complemento" title="Complemento do endereço"
+								id="complemento" styleClass="validate" required="true" />
+							<h:outputLabel value="Complemento" for="complemento"
+								styleClass="active" />
+						</div>
+					</div>
+
+					<div class="row">
+						<h:commandButton alt="Cadastrar" title="Cadastrar no sistema"
+							value="Cadastrar" />
+					</div>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
 </html>
