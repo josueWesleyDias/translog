@@ -2,6 +2,7 @@ package entidade;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -9,7 +10,7 @@ import javax.persistence.OneToOne;
 
 /**
  * 
- *Parametro para notificação
+ *Parametro para notificaï¿½ï¿½o
  */
 
 @Entity
@@ -25,15 +26,13 @@ public class Parametro {
 	@Column
 	private int distancia;
 	
-	@OneToOne
-	@Column(name="endereco_inical")
+	@OneToOne(fetch = FetchType.LAZY)
 	private Endereco enderecoInicial;
 	
-	@OneToOne
-	@Column(name="endereco_final")
+	@OneToOne(fetch = FetchType.LAZY)
 	private Endereco enderencoFinal;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private Peso peso;
 
 	public int getId() {

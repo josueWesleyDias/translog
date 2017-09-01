@@ -2,6 +2,7 @@ package entidade;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,10 +27,10 @@ public class Usuario {
 	@Column(name="cpf_cnpj")
 	private long cpfCnpj;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private Parametro paramentro;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private Endereco endereco;
 	
 	public int getId() {

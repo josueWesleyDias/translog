@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,7 +29,7 @@ public class Proposta {
 	@Column(name="data_inicial")
 	private Date dataInicial;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private Usuario usuario;
 
 	public int getId() {

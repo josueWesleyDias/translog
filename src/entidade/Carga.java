@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,18 +26,16 @@ public class Carga {
 	@Column(name="data_inicio")
 	private Date dataInicial;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private Peso peso;
 	
-	@OneToOne
-	@Column(name="endereco_inicial")
+	@OneToOne(fetch = FetchType.LAZY)
 	private Endereco enderencoInicial;
 	
-	@OneToOne
-	@Column(name="endereco_final")
+	@OneToOne(fetch = FetchType.LAZY)
 	private Endereco enderencoFinal;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private Usuario usuario;
 
 	public int getId() {
