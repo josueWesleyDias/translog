@@ -7,19 +7,19 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<non-jta-data-source>java:/TranslogDS</non-jta-data-source>
 
-		<class>entidade.Carga</class>
-		<class>entidade.Classificacao</class>
-		<class>entidade.Comentario</class>
-		<class>entidade.Endereco</class>
-		<class>entidade.Parametro</class>
-		<class>entidade.Peso</class>
-		<class>entidade.Proposta</class>
-		<class>entidade.Usuario</class>
+		<class>br.edu.unifesspa.model.entidade.Carga</class>
+		<class>br.edu.unifesspa.model.entidade.Classificacao</class>
+		<class>br.edu.unifesspa.model.entidade.Comentario</class>
+		<class>br.edu.unifesspa.model.entidade.Endereco</class>
+		<class>br.edu.unifesspa.model.entidade.Parametro</class>
+		<class>br.edu.unifesspa.model.entidade.Peso</class>
+		<class>br.edu.unifesspa.model.entidade.Proposta</class>
+		<class>br.edu.unifesspa.model.entidade.Usuario</class>
 
 		<properties>
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
-			<!-- <property name="hibernate.hbm2ddl.auto" value="create" /> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="update" /> --> 
 		</properties>
 	</persistence-unit>
 

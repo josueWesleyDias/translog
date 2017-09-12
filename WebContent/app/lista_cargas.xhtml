@@ -1,11 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head></h:head> 
-<body> 
-
-</body> 
+<body>
+	<ui:composition template="../resources/template/cabecalhoTranspotador.xhtml">
+		<ui:define name="conteudo">
+			<div class="container center">
+				<div class="row">
+					<h3>
+						<h:outputText value="Cargas disponíveis" />
+					</h3>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
 </html>

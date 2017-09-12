@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -19,29 +18,36 @@
 			<div class="navbar" style="background-color: #c39b37;">
 				<div class="container">
 					<a href="index.xhtml" class="logo"> <img alt="logo"
-						src="resources/img/logo.png" title="TransLog" />
+						src="../resources/img/logo.png" title="TransLog" />
 					</a>
 
-					<ul class="right hide-on-med-and-down">
-						<li><a href="login.xhtml" class="right"
-							title="Login no sistema">Acesse</a></li>
-						<li><a href="cadastro.xhtml" class="right"
-							title="Cadastro no sistema">Cadastre-se</a></li>
+					<ul class="dropdown-content" id="dropdown1">
+						<li><a href="index.xhtml" title="Dados pessoais">Minha
+								Conta</a></li>
+						<li><a href="index.xhtml" title="Logout do sistema">Sair</a></li>
 					</ul>
 
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#" class="dropdown-button btn red"
+							data-activates='dropdown1' data-beloworigin="true">Usuário</a></li>
+					</ul>
 					<div id="slide-out" class="side-nav center">
 						<div class="row" style="background-color: #c39b37;">
-							<a href="https://www.facebook.com/" title="Nosso Facebook"><img
-								alt="Nosso Facebook" src="resources/img/icons/facebook.png" /></a>
-							<a href="https://www.instagram.com/" title="Nosso Instagram"><img
-								alt="Nosso Instagram" src="resources/img/icons/instagram.png" /></a>
-							<a href="https://www.twitter.com/" title="Nosso Twitter"><img
-								alt="Nosso Twitter" src="resources/img/icons/twitter.png" /></a> <a
-								href="https://www.unifesspa.edu.br/" title="Nossa universidade"><img
-								alt="Nossa universidade" src="resources/img/icons/twitter.png" /></a>
+							<a href="https://www.facebook.com/" title="Nosso Facebook"
+								target="blank"><img alt="Nosso Facebook"
+								src="../resources/img/icons/facebook.png" /></a> <a
+								href="https://www.instagram.com/" title="Nosso Instagram"
+								target="blank"><img alt="Nosso Instagram"
+								src="../resources/img/icons/instagram.png" /></a> <a
+								href="https://www.twitter.com/" title="Nosso Twitter"
+								target="blank"><img alt="Nosso Twitter"
+								src="../resources/img/icons/twitter.png" /></a> <a
+								href="https://www.unifesspa.edu.br/" title="Nossa universidade"
+								target="blank"><img alt="Nossa universidade"
+								src="../resources/img/icons/twitter.png" /></a>
 							<div class="row">
 								<a href="index.xhtml" title="Inicio"><img alt="Logo"
-									src="resources/img/logo.png" /></a>
+									src="../resources/img/logo.png" /></a>
 							</div>
 						</div>
 						<div class="row black-text">
@@ -49,16 +55,15 @@
 						</div>
 						<ul>
 							<li><a href="index.xhtml" title="Inicio">Home</a></li>
-							<li><a href="index.xhtml" >Quem somos</a></li>
-							<li><a href="index.xhtml" title="Nossos contatos">Contatos</a></li>
-							<li><a href="login.xhtml" title="Login no sistema">Acesse</a></li>
-							<li><a href="cadastro.xhtml" title="Cadastro no sistema">Cadastre-se</a></li>
+							<li><a href="lista_cargas.xhtml" title="Cargas disponíveis">Listar
+									Cargas</a></li>
 						</ul>
 					</div>
 
 					<a href="#" data-activates="slide-out"
 						class="button-collapse show-on-large"><i
 						class="material-icons">menu</i> </a>
+
 				</div>
 			</div>
 		</nav>

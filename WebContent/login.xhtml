@@ -1,0 +1,40 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<body>
+	<ui:composition template="resources/template/cabecalho.xhtml">
+		<ui:define name="conteudo">
+			<div class="container center">
+				<div class="row">
+					<h3>
+						<h:outputText value="Acesse sua conta aqui" />
+					</h3>
+				</div>
+				<h:form id="form">
+					<div class="row">
+						<div class="input-field col s4"></div>
+						<div class="input-field col s4">
+							<h:inputText alt="Login" title="Seu Login" id="login"
+								styleClass="validate" required="true" requiredMessage="O campo é obrigatório" value="${loginMBean.usuario.login}"/>
+							<h:outputLabel value="Login" for="login" styleClass="active" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s4"></div>
+						<div class="input-field col s4">
+							<h:inputSecret alt="Senha" title="Sua senha" id="password"
+								styleClass="validate" required="true" requiredMessage="O campo é obrigatório" value="${loginMBean.usuario.senha}"/>
+							<h:outputLabel value="Senha" for="password" styleClass="active" />
+						</div>
+					</div>
+					<h:commandButton alt="Entrar" title="Entar no sistema"
+						value="Entrar" action="${loginMBean.logar}"/>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

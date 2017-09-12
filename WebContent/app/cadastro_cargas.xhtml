@@ -1,0 +1,66 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<ui:composition template="../resources/template/cabecalhoCliente.xhtml">
+		<ui:define name="conteudo">
+
+			<div class="container center">
+				<div class="row">
+					<h4>
+						<h:outputText value="Cadastrar carga" />
+					</h4>
+				</div>
+				<h:form id="form_cadastro">
+					<div class="row">
+						<div class="input-field col s6">
+							<h:outputLabel for="data_entrega" value="Data de entrega"
+								title="Data preferencial para entrega" />
+							<p:calendar id="data_entrega" />
+						</div>
+
+						<div class="input-field col s3">
+							<p:inputNumber id="tamanho" styleClass="validate" required="true"
+								alt="Tamanho Carga" title="Tamanho da carga em m²" />
+							<h:outputLabel value="Tamanho da carga" for="tamanho" />
+						</div>
+						<div class="col s1">
+							<h:outputText value="m²" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="input-field col s6">
+							<h:selectOneListbox alt="Peso" title="Peso da carga em KG"
+								id="peso" styleClass="validate" required="true" />
+							<h:outputLabel value="Peso" for="peso" />
+						</div>
+
+						<div class="input-field col s6">
+							<h:inputText alt="Obs" id="obs" styleClass="validate"
+								required="true" />
+							<h:outputLabel value="Observações" for="obs" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="row col s6">
+							<h:commandButton alt="Cancelar" title="Canceclar cadastro"
+								value="Cancelar" id="cancelar" />
+						</div>
+
+						<div class="row col s6">
+							<h:commandButton alt="Avançar"
+								title="Avançar para endereço inicial" value="Avançar" />
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
