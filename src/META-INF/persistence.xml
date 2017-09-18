@@ -15,11 +15,12 @@
 		<class>br.edu.unifesspa.model.entidade.Peso</class>
 		<class>br.edu.unifesspa.model.entidade.Proposta</class>
 		<class>br.edu.unifesspa.model.entidade.Usuario</class>
+		<class>br.edu.unifesspa.model.entidade.TipoUsuario</class>
 
 		<properties>
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
-			<!-- <property name="hibernate.hbm2ddl.auto" value="update" /> --> 
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 

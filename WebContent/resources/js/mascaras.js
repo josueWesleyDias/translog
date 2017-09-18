@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#telefone").mask("(00) 90000-0000")}),$(document).ready(function(){$("#cep").mask("00000-000")});

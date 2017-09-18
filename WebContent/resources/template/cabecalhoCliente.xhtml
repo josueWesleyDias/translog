@@ -17,63 +17,95 @@
 		<nav>
 			<div class="navbar" style="background-color: #c39b37;">
 				<div class="container">
-					<a href="index.xhtml" class="logo"> <img alt="logo"
-						src="../resources/img/logo.png" title="TransLog" />
-					</a>
+					<h:form id="form">
+						<a href="index.xhtml" class="logo"> <img alt="logo"
+							src="../resources/img/logo.png" title="TransLog" />
+						</a>
 
-					<ul class="dropdown-content" id="dropdown1">
-						<li><a href="index.xhtml" title="Dados pessoais">Minha
-								Conta</a></li>
-						<li><a href="index.xhtml" title="Logout do sistema">Sair</a></li>
-					</ul>
-
-					<ul class="right hide-on-med-and-down">
-						<li><a href="#" class="dropdown-button btn red"
-							data-activates='dropdown1' data-beloworigin="true">Usuário</a></li>
-					</ul>
-					<div id="slide-out" class="side-nav center">
-						<div class="row" style="background-color: #c39b37;">
-							<a href="https://www.facebook.com/" title="Nosso Facebook"><img
-								alt="Nosso Facebook" src="../resources/img/icons/facebook.png" /></a>
-							<a href="https://www.instagram.com/" title="Nosso Instagram"><img
-								alt="Nosso Instagram" src="../resources/img/icons/instagram.png" /></a>
-							<a href="https://www.twitter.com/" title="Nosso Twitter"><img
-								alt="Nosso Twitter" src="../resources/img/icons/twitter.png" /></a>
-							<a href="https://www.unifesspa.edu.br/"
-								title="Nossa universidade"><img alt="Nossa universidade"
-								src="../resources/img/icons/twitter.png" /></a>
-							<div class="row">
-								<a href="index.xhtml" title="Inicio"><img alt="Logo"
-									src="../resources/img/logo.png" /></a>
-							</div>
-						</div>
-						<div class="row black-text">
-							<h5>Menu</h5>
-						</div>
-						<ul>
-							<li><a href="index.xhtml" title="Inicio">Home</a></li>
-							<li><a href="lista_cargas.xhtml" title="Suas cargas">Listar
-									Cargas</a></li>
-							<li><a href="cadastro_cargas.xhtml" title="Cadastrar carga">Cadastrar
-									Carga</a></li>
-							<li><a href="proposta.xhtml">Propostas recebidas</a></li>
+						<ul class="dropdown-content" id="dropdown1">
+							<li><h:commandLink action="account.xhtml"
+									value="Minha Conta" title="Dados pessoais" /></li>
+							<li><h:commandLink action="#{loginMBean.sair}" value="Sair"
+									title="Logout do sistema" /></li>
 						</ul>
-					</div>
 
-					<a href="#" data-activates="slide-out"
-						class="button-collapse show-on-large"><i
-						class="material-icons">menu</i> </a>
 
+						<ul class="right hide-on-med-and-down">
+							<li><a href="#" class="dropdown-button btn red"
+								data-activates='dropdown1' data-beloworigin="true">Usuário</a></li>
+						</ul>
+						<div id="slide-out" class="side-nav center">
+							<div class="row" style="background-color: #c39b37;">
+								<a href="https://www.facebook.com/" title="Nosso Facebook"><img
+									alt="Nosso Facebook" src="../resources/img/icons/facebook.png" /></a>
+								<a href="https://www.instagram.com/" title="Nosso Instagram"><img
+									alt="Nosso Instagram"
+									src="../resources/img/icons/instagram.png" /></a> <a
+									href="https://www.twitter.com/" title="Nosso Twitter"><img
+									alt="Nosso Twitter" src="../resources/img/icons/twitter.png" /></a>
+								<a href="https://www.unifesspa.edu.br/"
+									title="Nossa universidade"><img alt="Nossa universidade"
+									src="../resources/img/icons/twitter.png" /></a>
+								<div class="row">
+									<a href="index.xhtml" title="Inicio"><img alt="Logo"
+										src="../resources/img/logo.png" /></a>
+								</div>
+							</div>
+							<div class="row black-text">
+								<h5>Menu</h5>
+							</div>
+							<ul>
+								<li><a href="index.xhtml" title="Inicio">Home</a></li>
+								<li><a href="lista_cargas.xhtml" title="Suas cargas">Listar
+										Cargas</a></li>
+								<li><a href="cadastro_cargas.xhtml" title="Cadastrar carga">Cadastrar
+										Carga</a></li>
+								<li><a href="proposta.xhtml">Propostas recebidas</a></li>
+							</ul>
+						</div>
+
+						<a href="#" data-activates="slide-out"
+							class="button-collapse show-on-large"><i
+							class="material-icons">menu</i> </a>
+					</h:form>
 				</div>
 			</div>
 		</nav>
 		<script type="text/javascript"
 			src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" />
 		<h:outputScript library="js" name="materialize.min.js" />
+		<h:outputScript library="js" name="jquery.mask.min.js" />
+		<h:outputScript library="js" name="mascaras.js" />
+
+
 		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.datepicker').pickadate({
+				    monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+				    monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+				    weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
+				    weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+				    format: 'yyyy-mm-dd',
+				    today: 'Hoje',
+				    clear: 'Limpar',
+				    close: 'Ok',
+				    labelMonthNext: 'Próximo mês',
+				    labelMonthPrev: 'Mês anterior',
+				    labelMonthSelect: 'Selecione um mês',
+				    labelYearSelect: 'Selecione um ano',
+				    selectMonths: true, 
+				    selectYears: 15,
+				    closeOnSelect: true
+				    });
+			});
 			$(document).ready(function(){
 		 		$('.button-collapse').sideNav();
 			})
+			$(document).ready(function() {
+			    $('select').material_select();
+			});
 	    </script>
 	</ui:insert>
 

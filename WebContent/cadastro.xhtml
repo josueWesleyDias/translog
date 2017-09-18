@@ -16,136 +16,120 @@
 							value="Crie sua conta e tenha acesso a inúmeras vantagens" />
 					</h4>
 				</div>
-				<div class="row">
-					<div class="col s4">
-						<h6>
-							<b><h:outputText value="Dados Pessoais" /></b>
-						</h6>
-					</div>
-					<div class="col s1"></div>
-					<div class="col s7">
-						<h6>
-							<b><h:outputText value="Endereço" /></b>
-						</h6>
-					</div>
-				</div>
 				<h:form id="form_cadastro">
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="Nome" title="Seu nome" id="nome"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.usuario.nome}" />
-							<h:outputLabel value="Nome" for="nome" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="Logradouro" title="Seu logradouro"
-								id="logradouro" styleClass="validate" required="true"
-								value="${cadastroMBean.endereco.logradouro}" />
-							<h:outputLabel value="Logradouro" for="logradouro" />
-						</div>
-					</div>
 
 					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="CPF/CNPJ" title="Seu cpf/cnpj" id="cpf_cnpj"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.usuario.cpfCnpj}" />
-							<h:outputLabel value="CPF/CNPJ" for="cpf_cnpj" />
+						<div class="col s12 m6">
+							<div class="card darken-1">
+								<div class="card-content">
+									<span class="card-title"><h:outputText
+											value="Dados Pessoais" /></span>
+
+									<div class="row input-field">
+										<h:inputText alt="Nome" title="Seu nome" id="nome"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.nome}" />
+										<h:outputLabel value="Nome" for="nome" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="CPF/CNPJ" title="Seu cpf/cnpj" id="cpf_cnpj"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.cpfCnpj}" />
+										<h:outputLabel value="CPF/CNPJ" for="cpf_cnpj" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="login" title="Seu login" id="login"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.login}" />
+										<h:outputLabel value="Login" for="login" />
+									</div>
+									<div class="row input-field">
+										<h:inputSecret alt="Senha" title="Sua senha" id="senha"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.senha}" />
+										<h:outputLabel value="Senha" for="senha" />
+									</div>
+									<div class="row input-field">
+										<h:inputSecret alt="Confirma senha" title="Confirme sua senha"
+											id="csenha" styleClass="validate" required="true" />
+										<h:outputLabel value="Confirme sua senha" for="csenha" />
+									</div>
+									<div class="row input-field">
+										<h:selectOneMenu id="categoria"
+											value="#{cadastroMBean.usuario.tipoUsuario.id}">
+											<f:selectItem itemLabel="Selecione uma opção" itemValue="0" />
+											<f:selectItems value="#{cadastroMBean.comboTipoUsuario}" />
+										</h:selectOneMenu>
+										<h:outputLabel value="Categoria" for="categoria" />
+									</div>
+								</div>
+							</div>
 						</div>
 
-						<div class="input-field col s6">
-							<h:inputText alt="Cep" title="Seu CEP" id="cep"
-								styleClass="validate" required="true"
-								value="#{cadastroMBean.endereco.cep}" />
-							<h:outputLabel value="CEP" for="cep" styleClass="active" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="login" title="Seu login" id="login"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.usuario.login}" />
-							<h:outputLabel value="Login" for="login" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="Bairro" title="Seu Bairro" id="bairro"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.endereco.bairro}" />
-							<h:outputLabel value="Bairro" for="bairro" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputSecret alt="Senha" title="Sua senha" id="senha"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.usuario.senha}" />
-							<h:outputLabel value="Senha" for="senha" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="Número" title="Seu número" id="numero"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.endereco.numero}" />
-							<h:outputLabel value="Número" for="numero" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputSecret alt="Confirma senha" title="Confirme sua senha"
-								id="csenha" styleClass="validate" required="true" />
-							<h:outputLabel value="Confirme sua senha" for="csenha" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="estado" title="Seu estado" id="estado"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.endereco.estado}" />
-							<h:outputLabel value="Estado" for="estado" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<p:selectOneMenu id="categoria" effect="fold">
-								<f:selectItem itemLabel="-- Selecione uma opção" itemValue="0" />
-								<f:selectItem itemLabel="-- Selecione uma opção1" itemValue="1" />
-							</p:selectOneMenu>
-							<h:outputLabel value="Tipo de usuário" for="categoria"
-								styleClass="active" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="cidade" title="Sua cidade" id="cidade"
-								styleClass="validate" required="true"
-								value="${cadastroMBean.endereco.cidade}" />
-							<h:outputLabel value="Cidade" for="cidade" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6"></div>
-						<div class="input-field col s6">
-							<h:inputText alt="complemento" title="Complemento do endereço"
-								id="complemento" styleClass="validate" required="true"
-								value="${cadastroMBean.endereco.complemento}" />
-							<h:outputLabel value="Complemento" for="complemento" />
+						<div class="col s12 m6">
+							<div class="card darken-1">
+								<div class="card-content">
+									<span class="card-title black-text"><h:outputText
+											value="Endereço" /></span>
+									<div class="row input-field">
+										<h:inputText alt="Logradouro" title="Seu logradouro"
+											id="logradouro" styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.endereco.logradouro}" />
+										<h:outputLabel value="Logradouro" for="logradouro" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="Cep" title="Seu CEP" id="cep"
+											styleClass="validate" required="true"
+											value="#{cadastroMBean.usuario.endereco.cep}" />
+										<h:outputLabel value="CEP" for="cep" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="Bairro" title="Seu Bairro" id="bairro"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.endereco.bairro}" />
+										<h:outputLabel value="Bairro" for="bairro" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="Número" title="Seu número" id="numero"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.endereco.numero}" />
+										<h:outputLabel value="Número" for="numero" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="estado" title="Seu estado" id="estado"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.endereco.estado}" />
+										<h:outputLabel value="Estado" for="estado" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="cidade" title="Sua cidade" id="cidade"
+											styleClass="validate" required="true"
+											value="${cadastroMBean.usuario.endereco.cidade}" />
+										<h:outputLabel value="Cidade" for="cidade" />
+									</div>
+									<div class="row input-field">
+										<h:inputText alt="complemento" title="Complemento do endereço"
+											id="complemento" styleClass="validate"
+											value="${cadastroMBean.usuario.endereco.complemento}" />
+										<h:outputLabel value="Complemento" for="complemento" />
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="row col s6">
 							<h:commandButton alt="Cancelar" title="Canceclar cadastro"
-								value="Cancelar" id="cancelar"/>
+								value="Cancelar" id="cancelar"
+								styleClass="btn waves-effect waves-light" onclick="window.history.back();" />
 						</div>
 
 						<div class="row col s6">
 							<h:commandButton alt="Cadastrar" title="Cadastrar no sistema"
-								value="Cadastrar" id="cadastrar" action="${cadastroMBean.cadastrar}"/>
+								value="Cadastrar" id="cadastrar"
+								action="${cadastroMBean.cadastrar}"
+								styleClass="btn waves-effect waves-light" />
 						</div>
 					</div>
 				</h:form>

@@ -1,0 +1,35 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<body>
+	<ui:composition template="../resources/template/cabecalhoCliente.xhtml">
+		<ui:define name="conteudo">
+
+			<div class="container center">
+				<div class="row">
+					<h4>
+						<h:outputText value="Minha conta" />
+					</h4>
+				</div>
+				<div class="row">
+					<b><h:outputText value="Nome: " /></b>
+					<h:outputText value="#{loginMBean.usuarioSession.nome}" />
+				</div>
+				<div class="row">
+					<b><h:outputText value="Login: " /></b>
+					<h:outputText value="#{loginMBean.usuarioSession.login}" />
+				</div>
+				<div class="row">
+					<b><h:outputText value="CPF: " /></b>
+					<h:outputText value="#{loginMBean.usuarioSession.cpfCnpj}" />
+				</div>
+				<h:commandButton value="Voltar" onclick="window.history.back();"
+					styleClass="btn waves-effect waves-light" />
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

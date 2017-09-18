@@ -11,52 +11,53 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-
 import br.edu.unifesspa.persistence.PersistenceUtil;
 
-@WebFilter(urlPatterns="/app/*")
+@WebFilter(urlPatterns = "*")
 public class OpenSessionInViewFilter implements Filter {
 
 	@Override
-	public void destroy() {	}
-	
+	public void destroy() {
+	}
+
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 
 		EntityManager session = PersistenceUtil.getEntityManager();
 		EntityTransaction transaction = null;
-		
+
 		try {
 			transaction = session.getTransaction();
 
 			transaction.begin();
-			
-			System.out.println("Iniciando transaction InView");
-			
+
+//			System.out.println("Iniciando transaction InView");
+
 			request.setAttribute("session", session);
-			
+
 			chain.doFilter(request, response);
-			
+
 			transaction.commit();
-			System.out.println("Finalizando transaction InView");
-			
+//			System.out.println("Finalizando transaction InView");
+
 		} catch (Exception e) {
-			if (transaction != null)
+			e.getMessage();
+			e.printStackTrace();
+			if (transaction != null) {
 				transaction.rollback();
+			}
 		} finally {
-			
+
 			if (session.isOpen())
 				session.close();
 		}
-		
+
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		
+
 	}
-	
-	
 
 }

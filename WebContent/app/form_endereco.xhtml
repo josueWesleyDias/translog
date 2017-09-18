@@ -9,151 +9,144 @@
 		<ui:define name="conteudo">
 
 			<div class="container center">
+				<br />
+
 				<div class="row">
-					<h4>
-						<h:outputText
-							value="Crie sua conta e tenha acesso a inúmeras vantagens" />
-					</h4>
+					<div class="col s12 m6">
+						<div class="card darken-1">
+							<div class="card-content">
+								<span class="card-title"><h:outputText
+										value="Endereço inicial" /></span>
+
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Logradouro" title="Seu logradouro"
+										id="logradouro" styleClass="validate" required="true"
+										value="#{cargaMBean.carga.enderecoInicial.logradouro}" />
+									<h:outputLabel value="Logradouro" for="logradouro" />
+								</div>
+
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Cep" title="Seu CEP" id="cep"
+										styleClass="validate cep" required="true"
+										value="#{cargaMBean.carga.enderecoInicial.cep}" />
+									<h:outputLabel value="CEP" for="cep" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Bairro" title="Seu Bairro" id="bairro"
+										styleClass="validate" required="true"
+										value="${cargaMBean.carga.enderecoInicial.bairro}" />
+									<h:outputLabel value="Bairro" for="bairro" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Número" title="Seu número" id="numero"
+										styleClass="validate numero" required="true"
+										value="${cargaMBean.carga.enderecoInicial.numero}" />
+									<h:outputLabel value="Número" for="numero" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="estado" title="Seu estado" id="estado"
+										styleClass="validate" required="true"
+										value="${cargaMBean.carga.enderecoInicial.estado}" />
+									<h:outputLabel value="Estado" for="estado" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="cidade" title="Sua cidade" id="cidade"
+										styleClass="validate" required="true"
+										value="${cargaMBean.carga.enderecoInicial.cidade}" />
+									<h:outputLabel value="Cidade" for="cidade" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="complemento"
+										title="Complemento do seu endereço" id="complemento"
+										styleClass="validate"
+										value="${cargaMBean.carga.enderecoInicial.complemento}" />
+									<h:outputLabel value="Complemento" for="complemento" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6">
+						<div class="card darken-1">
+							<div class="card-content">
+								<span class="card-title black-text"><h:outputText
+										value="Endereço de entrega" /></span>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Logradouro" title="Logradouro de entrega"
+										id="logradouro_entrega" styleClass="validate" required="true"
+										value="${cargaMBean.carga.enderecoFinal.logradouro}" />
+									<h:outputLabel value="Logradouro" for="logradouro_entrega" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Cep" title="CEP de entrega" id="cep_entrega"
+										styleClass="validate" required="true"
+										value="#{cargaMBean.carga.enderecoFinal.cep}" />
+									<h:outputLabel value="CEP" for="cep_entrega" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Bairro" title="Bairro de entrega"
+										id="bairro_entrega" styleClass="validate" required="true"
+										value="${cargaMBean.carga.enderecoFinal.bairro}" />
+									<h:outputLabel value="Bairro" for="bairro_entrega" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="Número" title="Número de entrega"
+										id="numero_entrega" styleClass="validate numero"
+										required="true"
+										value="${cargaMBean.carga.enderecoFinal.numero}" />
+									<h:outputLabel value="Número" for="numero_entrega" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="estado" title="Estado da entrega"
+										id="estado_entrega" styleClass="validate" required="true"
+										value="${cargaMBean.carga.enderecoFinal.estado}" />
+									<h:outputLabel value="Estado" for="estado_entrega" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="cidade" title="Cidade  de entrega"
+										id="cidade_entrega" styleClass="validate" required="true"
+										value="${cargaMBean.carga.enderecoFinal.cidade}" />
+									<h:outputLabel value="Cidade" for="cidade" />
+								</div>
+								<div class="row input-field">
+									<i class="material-icons prefix">location_on</i>
+									<h:inputText alt="complemento"
+										title="Complemento do endereço de entrega"
+										id="complemento_entrega" styleClass="validate"
+										value="${cargaMBean.carga.enderecoFinal.complemento}" />
+									<h:outputLabel value="Complemento" for="complemento" />
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+
 				<div class="row">
-					<div class="col s4">
-						<h6>
-							<b><h:outputText value="Endereço inicial" /></b>
-						</h6>
+					<div class="row col s6">
+						<h:button alt="Cancelar" title="Canceclar cadastro"
+							value="Cancelar" id="cancelar" onclick="window.history.back();"
+							styleClass="btn waves-effect waves-light" />
 					</div>
-					<div class="col s1"></div>
-					<div class="col s7">
-						<h6>
-							<b><h:outputText value="Endereço de entrega" /></b>
-						</h6>
+
+					<div class="row col s6">
+						<h:commandButton alt="Cadastrar" title="Cadastrar no sistema"
+							value="Cadastrar" id="cadastrar" action="${cargaMBean.cadastrar}"
+							styleClass="btn waves-effect waves-light" />
 					</div>
 				</div>
-				<h:form id="form_cadastro">
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="Logradouro" title="Seu logradouro"
-								id="logradouro" styleClass="validate" required="true"
-								value="${cargaMBean.enderecoInicial.logradouro}" />
-							<h:outputLabel value="Logradouro" for="logradouro" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="Logradouro" title="Logradouro de entrega"
-								id="logradouro_entrega" styleClass="validate" required="true"
-								value="${cargaMBean.enderecoFinal.logradouro}" />
-							<h:outputLabel value="Logradouro" for="logradouro_entrega" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="Cep" title="Seu CEP" id="cep"
-								styleClass="validate" required="true"
-								value="#{cargaMBean.enderecoInicial.cep}" />
-							<h:outputLabel value="CEP" for="cep" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="Cep" title="CEP de entrega" id="cep_entrega"
-								styleClass="validate" required="true"
-								value="#{cargaMBean.enderecoFinal.cep}" />
-							<h:outputLabel value="CEP" for="cep_entrega" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="Bairro" title="Seu Bairro" id="bairro"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoInicial.bairro}" />
-							<h:outputLabel value="Bairro" for="bairro" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="Bairro" title="Bairro de entrega" id="bairro_entrega"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoFinal.bairro}" />
-							<h:outputLabel value="Bairro" for="bairro_entrega" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="Número" title="Seu número" id="numero"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoInicial.numero}" />
-							<h:outputLabel value="Número" for="numero" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="Número" title="Número de entrega" id="numero_entrega"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoFinal.numero}" />
-							<h:outputLabel value="Número" for="numero_entrega" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="estado" title="Seu estado" id="estado"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoInicial.estado}" />
-							<h:outputLabel value="Estado" for="estado" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="estado" title="Estado da entrega" id="estado_entrega"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoFinal.estado}" />
-							<h:outputLabel value="Estado" for="estado_entrega" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="cidade" title="Sua cidade" id="cidade"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoInicial.cidade}" />
-							<h:outputLabel value="Cidade" for="cidade" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="cidade" title="Cidade  de entrega" id="cidade_entrega"
-								styleClass="validate" required="true"
-								value="${cargaMBean.enderecoFinal.cidade}" />
-							<h:outputLabel value="Cidade" for="cidade" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h:inputText alt="complemento" title="Complemento do seu endereço"
-								id="complemento" styleClass="validate" required="true"
-								value="${cargaMBean.enderecoInicial.complemento}" />
-							<h:outputLabel value="Complemento" for="complemento" />
-						</div>
-
-						<div class="input-field col s6">
-							<h:inputText alt="complemento" title="Complemento do endereço de entrega"
-								id="complemento_entrega" styleClass="validate" required="true"
-								value="${cargaMBean.enderecoFinal.complemento}" />
-							<h:outputLabel value="Complemento" for="complemento" />
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="row col s6">
-							<h:commandButton alt="Cancelar" title="Canceclar cadastro"
-								value="Cancelar" id="cancelar" />
-						</div>
-
-						<div class="row col s6">
-							<h:commandButton alt="Cadastrar" title="Cadastrar no sistema"
-								value="Cadastrar" id="cadastrar"
-								action="${cargaMBean.cadastrar}" />
-						</div>
-					</div>
-				</h:form>
 			</div>
 		</ui:define>
 	</ui:composition>

@@ -1,5 +1,6 @@
 package br.edu.unifesspa.model.entidade;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,7 +19,7 @@ public class Usuario {
 	@Column
 	private String nome;
 	
-	@Column(nullable=false)
+	@Column(nullable=false, unique=true )
 	private String login;
 	
 	@Column(nullable=false)
@@ -27,11 +28,14 @@ public class Usuario {
 	@Column(name="cpf_cnpj")
 	private long cpfCnpj;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	private Parametro paramentro;
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Parametro paramentro = new Parametro();
+	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Endereco endereco = new Endereco();
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	private Endereco endereco;
+	private TipoUsuario tipoUsuario = new TipoUsuario();
 	
 	public int getId() {
 		return id;
@@ -87,6 +91,14 @@ public class Usuario {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 }

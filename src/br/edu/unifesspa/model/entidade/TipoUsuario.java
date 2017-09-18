@@ -7,7 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Peso {
+public class TipoUsuario {
+	
+	public static int CLIENTE = 1;
+
+	public static int TRANSPORTADOR = 2;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

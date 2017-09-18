@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <body>
 	<ui:composition template="../resources/template/cabecalhoCliente.xhtml">
@@ -18,31 +17,38 @@
 				<h:form id="form_cadastro">
 					<div class="row">
 						<div class="input-field col s6">
-							<h:outputLabel for="data_entrega" value="Data de entrega"
-								title="Data preferencial para entrega" />
-							<p:calendar id="data_entrega" />
+							<h:outputLabel value="Data de entrega" for="date" />
+							<h:inputText value="#{cargaMBean.carga.dataEntrega}"
+								alt="Data entrega" required="true"
+								title="Data preferencial para entrega" id="date"
+								styleClass="datepicker">
+								<f:convertDateTime pattern="yyyy-MM-dd" />
+							</h:inputText>
 						</div>
 
-						<div class="input-field col s3">
-							<p:inputNumber id="tamanho" styleClass="validate" required="true"
-								alt="Tamanho Carga" title="Tamanho da carga em m²" />
-							<h:outputLabel value="Tamanho da carga" for="tamanho" />
-						</div>
-						<div class="col s1">
-							<h:outputText value="m²" />
+						<div class="input-field col s6">
+							<h:inputText value="#{cargaMBean.carga.tamanho}" id="tamanho"
+								styleClass="validate" required="true" alt="Tamanho Carga"
+								title="Tamanho da carga em m²"
+								converterMessage="Please enter digits only." />
+							<h:outputLabel value="Tamanho da carga" for="tamanho"
+								styleClass="active" />
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="input-field col s6">
-							<h:selectOneListbox alt="Peso" title="Peso da carga em KG"
-								id="peso" styleClass="validate" required="true" />
+							<h:selectOneMenu alt="Peso" id="peso"
+								value="#{cargaMBean.carga.peso.id}">
+								<f:selectItem itemLabel="Selecione uma opção" itemValue="0" />
+								<f:selectItems value="#{cargaMBean.comboAllPeso}" />
+							</h:selectOneMenu>
 							<h:outputLabel value="Peso" for="peso" />
 						</div>
 
 						<div class="input-field col s6">
 							<h:inputText alt="Obs" id="obs" styleClass="validate"
-								required="true" />
+								value="#{cargaMBean.carga.obs}" />
 							<h:outputLabel value="Observações" for="obs" />
 						</div>
 					</div>
@@ -50,12 +56,15 @@
 					<div class="row">
 						<div class="row col s6">
 							<h:commandButton alt="Cancelar" title="Canceclar cadastro"
-								value="Cancelar" id="cancelar" />
+								value="Cancelar" id="cancelar" onclick="window.history.back();"
+								styleClass="btn waves-effect waves-light" />
 						</div>
 
 						<div class="row col s6">
 							<h:commandButton alt="Avançar"
-								title="Avançar para endereço inicial" value="Avançar" />
+								title="Avançar para endereço inicial" value="Avançar"
+								action="${cargaMBean.avancar}"
+								styleClass="btn waves-effect waves-light" />
 						</div>
 					</div>
 				</h:form>

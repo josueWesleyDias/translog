@@ -71,9 +71,12 @@
 			src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<h:outputScript library="js" name="materialize.min.js" />
 		<script type="text/javascript">
-			$(document).ready(function(){
-		 		$('.button-collapse').sideNav();
-			})
+		$(document).ready(function(){
+	 		$('.button-collapse').sideNav();
+		})
+		$(document).ready(function() {
+		    $('select').material_select();
+		});
 	    </script>
 	</ui:insert>
 

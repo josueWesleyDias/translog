@@ -49,7 +49,7 @@
 						</div>
 						<ul>
 							<li><a href="index.xhtml" title="Inicio">Home</a></li>
-							<li><a href="index.xhtml" >Quem somos</a></li>
+							<li><a href="index.xhtml">Quem somos</a></li>
 							<li><a href="index.xhtml" title="Nossos contatos">Contatos</a></li>
 							<li><a href="login.xhtml" title="Login no sistema">Acesse</a></li>
 							<li><a href="cadastro.xhtml" title="Cadastro no sistema">Cadastre-se</a></li>
@@ -65,10 +65,14 @@
 		<script type="text/javascript"
 			src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<h:outputScript library="js" name="materialize.min.js" />
+
 		<script type="text/javascript">
-			$(document).ready(function(){
-		 		$('.button-collapse').sideNav();
-			})
+		$(document).ready(function(){
+	 		$('.button-collapse').sideNav();
+		})
+		$(document).ready(function() {
+		    $('select').material_select();
+		});
 	    </script>
 	</ui:insert>
 
